@@ -4,9 +4,10 @@ import pandas as pd
 import numpy as np
 import json
 from sklearn.preprocessing import OneHotEncoder, LabelEncoder, StandardScaler
+import joblib
 
 # loading the saved model
-loaded_model = pickle.load(open('./Model/RF_model.pkl', 'rb'))
+loaded_model = joblib.load(open('./Model/model.joblib', 'rb'))
 
 with open('./Model/scaler.pkl', 'rb') as f:
     scaler = pickle.load(f)
