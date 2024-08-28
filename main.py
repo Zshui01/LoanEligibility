@@ -7,7 +7,7 @@ from sklearn.preprocessing import OneHotEncoder, LabelEncoder, StandardScaler
 import joblib
 
 # loading the saved model
-loaded_model = joblib.load(open('./Model/model.joblib', 'rb'))
+loaded_model = pickle.load(open('./Model/RF_model.pkl', 'rb'))
 
 with open('./Model/scaler.pkl', 'rb') as f:
     scaler = pickle.load(f)
