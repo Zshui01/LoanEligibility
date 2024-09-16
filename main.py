@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 import json
 from sklearn.preprocessing import OneHotEncoder, LabelEncoder, StandardScaler
-import joblib
+
 
 # loading the saved model
 loaded_model = pickle.load(open('./Model/RF_model.pkl', 'rb'))
@@ -51,9 +51,9 @@ def main():
     st.title("Loan Eligibility Prediction")
 
     # Collect user input
-    income = st.number_input("Annual Income ($)", min_value=0, step=1000)
-    age = st.number_input("Age", min_value=0, max_value=100)
-    experience = st.number_input("Experience (years)", min_value=0, max_value=100)
+    income = st.number_input("Annual Income ($)", min_value=10000, step=1000)
+    age = st.number_input("Age", min_value=18, max_value=80)
+    experience = st.number_input("Experience (years)", min_value=1, max_value=100)
     marital_status = st.selectbox("Marital Status", ["Married", "Single"])
     car_ownership = st.selectbox("Car Ownership", ["Yes", "No"])
     profession = st.selectbox("Profession:", categories['profession'])
